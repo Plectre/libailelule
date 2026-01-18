@@ -1,0 +1,17 @@
+{% extends 'page/base_html.html' %}
+
+{% block content %}
+<div id="main-title">
+    <h1>LIBAILE ' UL</h1>
+    <h2>Bienvenue sur le site</h2>
+    <h3>On va te faire voler !!!</h3>
+</div>
+    <div id="articles">
+        {% for article in context %}
+            <div class="article">
+                <h1>{{ article.title }}</h1>
+                <p> {{ article.content }}</p>
+            </div>
+        {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libaile 'ul</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="header">
+       <nav>
+           <a href="/">ACCEUIL</a>
+           <a href="/base">LA BASE</a>
+           <a href="/club">LE CLUB</a>
+           <a href="/admin">ADMIN</a>
+       </nav>
+   </div>
+{% block content %}
+{% endblock %}
+</body>
+</html>

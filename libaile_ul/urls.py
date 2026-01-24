@@ -16,9 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from member_zone import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('page.urls'), name="page"),
-    path('connection/', include('member.urls'), name='member')
+    path('', include('member_zone.urls'), name="member"),
+    #path('login/', include('member_zone.urls'), name='login'),
+    #path('logout/', include('member_zone.urls'), name='logout'),
 ]

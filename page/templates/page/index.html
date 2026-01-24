@@ -1,12 +1,10 @@
 {% extends 'page/base_html.html' %}
 
 {% block content %}
-    <div id="articles">
         {% for article in context %}
             <div class="article">
                 <h1>{{ article.title }}</h1>
                 <p> {{ article.content }}</p>
             </div>
         {% endfor %}
-</div>
 {% endblock %}

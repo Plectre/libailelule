@@ -2,8 +2,7 @@
 from django.shortcuts import render
 from .models import Articles as article
 
-def index(request):
-    
+def index(request):  
     context = {}
     instance = article.objects.all()
     return render(request, 'page/index.html', {"context" : instance})

@@ -1,13 +1,17 @@
- {% load static %}
+{% load static %}
  
 {% block link %}
  <div id="header">
-        <nav>
+        <nav class="bold">
             <a href="/">ACCEUIL</a>
-            <a href="/base">LA BASE</a>
-            <a href="/club">LE CLUB</a>
-            <a href="/admin">ADMIN</a>
-            <a href="/connection">Se connecter</a>
+            <a href="{% url 'base' %}">LA BASE</a>
+            <a href="{% url 'club' %}">LE CLUB</a>
+            <!-- <a href="/admin">ADMIN</a> -->
+            {%  if user.is_authenticated %}
+                <a href="{% url 'logout_request' %}">Se deconnecter</a>
+            {% else %}
+                <a href="{% url 'member_login' %}">Se connecter</a>
+            {% endif %}
         </nav>
     </div>
 {% endblock %}

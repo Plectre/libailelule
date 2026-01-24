@@ -11,13 +11,19 @@
 <body>
     <div id="main-title">
     <h1>LIBAILE ' UL</h1>
-    <h2>Bienvenue sur le site</h2>
+    {% if user %}
+        <h2>Bienvenue {{ user.username }} sur le site</h2>
+    {% endif %}
     <h3>On va te faire voler !!!</h3>
 </div>
 {% include 'page/header.html' %}
-
+<div id="main-container">
 {% block content %}
-{% endblock %}
 
+{% endblock %}
+</div>
+  <div id="footer">
+        <h2>Footer</h2>
+    </div>
 </body>
 </html>

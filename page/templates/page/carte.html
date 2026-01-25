@@ -1,0 +1,18 @@
+{% extends 'page/base_html.html' %}
+{% load static %}
+
+{% block content %}
+        {% for carte in cartes %}
+            <div class="carte">
+                <div class="carte-title">
+                    <h1>{{ carte.title }}</h1>
+                </div>
+                <div class="carte-content">
+                    <p> {{ carte.content }}</p>
+                </div>
+                <div class="carte-image">
+                    <img src="{{ carte.image.url }}" alt="{{ carte.title }}" style="max-width: 500px;">
+                </div>
+            </div>
+        {% endfor %}
+{% endblock %}

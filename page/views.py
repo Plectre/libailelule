@@ -1,11 +1,12 @@
 
 from django.shortcuts import render
 from .models import Articles as article
+from .models import Carte
 
 def index(request):  
     context = {}
-    instance = article.objects.all()
-    return render(request, 'page/index.html', {"context" : instance})
+    cartes = Carte.objects.all()
+    return render(request, 'page/carte.html', {"cartes" : cartes})
 
 
 def club(request):

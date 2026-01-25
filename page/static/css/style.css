@@ -55,7 +55,7 @@
     height: auto;
 }
 
-.article {
+.carte {
     height: auto;
     padding: 2rem;
     margin: 2rem;
@@ -65,16 +65,27 @@
     align-content: center;
     background-color: azure;
 }
+.carte-image {
+    float: right;
+}
 
-.article p h1{
-    align-items: center;
+.carte-title{
+    display: flex;
+    flex-direction: row-reverse;
 
+}
+.carte-content {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: larger;
 }
 .separator {
     height: 20rem;
     background-color: whitesmoke;
     padding: 0px;
 }
+
+
 #container-form {
     display: flex;
     flex-direction: column;

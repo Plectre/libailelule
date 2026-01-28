@@ -22,6 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('page.urls'), name="page"),
     path('', include('member_zone.urls'), name="member"),
-    #path('login/', include('member_zone.urls'), name='login'),
+    #path('member_zone/', include('member_zone.urls'), name='login'),
     #path('logout/', include('member_zone.urls'), name='logout'),
 ]

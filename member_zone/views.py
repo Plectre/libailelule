@@ -4,7 +4,7 @@ from django.contrib import messages
 
 def login_view(request):
     print("login_view")
-    return render(request, 'login.html')
+    return render(request, 'member_zone/login.html')
 
 def login_request(request):
     if request.method == "POST":
@@ -19,7 +19,7 @@ def login_request(request):
             return redirect('hangar') 
         else:
             messages.error(request, 'Nom d\'utilisateur ou mot de passe incorrect.')
-    return render(request, 'login.html', {'user' :user.username})
+    return render(request, 'member_zone/login.html')
 
 def logout_request(request):
     print("logout is comming")
@@ -29,6 +29,12 @@ def logout_request(request):
 def hangar(request):
     # check if authenticated
     if request.user.is_authenticated:
-        return render(request, 'hangar.html')
+        return render(request, 'member_zone/hangar.html')
+    else:
+        return redirect('index')
+    
+def log_form(request):
+    if request.user.is_authenticated:
+        return render(request, 'member_zone/pilot_log.html')
     else:
         return redirect('index')

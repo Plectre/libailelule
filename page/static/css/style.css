@@ -66,12 +66,12 @@
     background-color: azure;
 }
 .carte-image {
-    float: right;
+    overflow:auto;
 }
 
 .carte-title{
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
 
 }
 .carte-content {

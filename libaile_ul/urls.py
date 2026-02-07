@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from member_zone import views
+from debug_toolbar.toolbar import debug_toolbar_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +25,5 @@ urlpatterns = [
     path('', include('member_zone.urls'), name="member"),
     #path('member_zone/', include('member_zone.urls'), name='login'),
     #path('logout/', include('member_zone.urls'), name='logout'),
+    path('__debug__/', include('debug_toolbar.urls')),
 ]

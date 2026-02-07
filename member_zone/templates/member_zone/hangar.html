@@ -1,8 +1,32 @@
-{% include 'page/header.html' %}
 
-<h1>Le Hangar</h1>
-<p>ça c'est ton hangar&nbsp{{ user.username | upper }}&nbspalors prends en soin mon bonhome</p>
+{% include 'page/base_html.html' %}
 
+{% block content %}
+<div class="container">
+<p><h1>Le Hangar de &nbsp{{ user.username | upper }}&nbsp</h1>
+ça c'est ton hangar alors prends en soin mon bonhome</p>
 
-
-<a href="{%url 'pilot_log' %}">Voir ton log de pilot</a>
+<table class="table table-striped table-bordered table-responsive">
+    <thead>
+        <tr>
+        <th>Appareil</th>
+        <th>Départ</th>
+        <th>Retour</th>
+        <th>Observations</th>
+        <th>Supprimer</th>
+        <tr>
+        </thead>
+        {% for log in logs %}
+        <tr>
+            <td>{{ log.appareil }}</td>
+            <td> {{ log.depart }}</td>
+            <td> {{ log.retour }}</td>
+            <td> {{ log.observations}}</td>
+            <td><a href="{% url 'delete_log' %}">x</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    <a href="{% url 'form_log' %}"/>ajouter</a>
+</div>
+{% endblock %}

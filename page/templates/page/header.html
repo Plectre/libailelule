@@ -1,17 +1,28 @@
 {% load static %}
- 
-{% block link %}
- <div id="header">
-        <nav class="bold">
-            <a href="/">ACCEUIL</a>
-            <a href="{% url 'base' %}">LA BASE</a>
-            <a href="{% url 'club' %}">LE CLUB</a>
-            <!-- <a href="/admin">ADMIN</a> -->
-            {%  if user.is_authenticated %}
-                <a href="{% url 'logout_request' %}">Se deconnecter</a>
-            {% else %}
-                <a href="{% url 'member_login' %}">Se connecter</a>
-            {% endif %}
-        </nav>
-    </div>
-{% endblock %}
+<div class="container">
+    {% block content %}
+    <ul class="nav bg-info">
+        <li class="nav-item">
+            <a class="nav-link link-light" href="/">ACCEUIL</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link link-light" href="{% url 'base' %}">LA BASE</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link link-light" href="{% url 'club' %}">LE CLUB</a>
+        </li>
+        {%  if user.is_authenticated %}
+        <li>
+            <a class="nav-link link-light" href="{% url 'logout_request' %}">Se deconnecter</a>
+        </li>
+        <li>
+            <a class="nav-link link-light" href="{% url 'hangar' %}">Hangar</a>
+        </li>
+        {% else %}
+        <li>
+            <a class="nav-link link-light" href="{% url 'member_login' %}">Se connecter</a>
+        </li>
+    </ul>
+    {% endif %}
+  {% endblock %}
+</div>

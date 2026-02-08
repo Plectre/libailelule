@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -49,7 +49,7 @@ def form_log(request):
             form_log.save()
             return redirect ('hangar')
         else:
-            print(form_log.errors)
+            error = "erreur de saisi"
             return redirect('form_log')
     else:
         form = LogForm()
@@ -59,6 +59,10 @@ def edit_log(request):
     if request.method == "POST":
         pk = request.POST.get('pk')
 
-def delete_log(request):
-    print("suprimer Log")
-    pass
+def delete_log(request, id):
+    if request.method == 'POST':
+        log = get_object_or_404(Logs,pk=id)
+        log.delete()
+        return redirect('hangar')
+    else:
+        return redirect('hangar')

@@ -4,7 +4,6 @@ from .models import Articles as article
 from .models import Carte
 
 def index(request):  
-    context = {}
     cartes = Carte.objects.all()
     return render(request, 'page/carte.html', {"cartes" : cartes})
 

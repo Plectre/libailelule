@@ -1,5 +1,5 @@
 
-{% include 'page/base_html.html' %}
+{% extends 'page/base_html.html' %}
 
 {% block content %}
 <div class="container">
@@ -22,11 +22,18 @@
             <td> {{ log.depart }}</td>
             <td> {{ log.retour }}</td>
             <td> {{ log.observations}}</td>
-            <td><a href="{% url 'delete_log' %}">x</a></td>
+            <td>
+                <form action="{% url 'delete_log' id=log.id %}" method="POST">
+                    {% csrf_token %}  
+                    <button class="btn btn-danger" type="submit">Supprimer</button>
+                </form>
+            </td>
         </tr>
         {% endfor %}
     </table>
     
-    <a href="{% url 'form_log' %}"/>ajouter</a>
+    <a href="{% url 'form_log' %}"/>
+    <button class="btn btn-success">Ajouter</button>
+    </a>
 </div>
 {% endblock %}

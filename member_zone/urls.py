@@ -10,5 +10,5 @@ urlpatterns = [
     path('member/hangar/', views.hangar, name="hangar"),
     path('member/form_log/', views.form_log, name='form_log'),
     path('member/edit_log/', views.edit_log, name='edit_log'),
-    path('member/delete_log/', views.delete_log, name='delete_log'),
+    path('member/delete_log/<int:id>/', views.delete_log, name='delete_log'),
 ]

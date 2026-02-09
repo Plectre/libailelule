@@ -11,17 +11,19 @@
         {% bootstrap_css %}
         {% bootstrap_javascript %}
     </head>
+
     <body>
         <div class='container'>
-        <h1>LIBAILE ' UL</h1>
-        {% if user %}
-        <h2>Bienvenue {{ user.username }} sur le site</h2>
-        {% endif %}
-        <h3>On va te faire voler !!!</h3>
+            <h1>LIBAILE ' UL</h1>
+            {% if user %}
+            <h2>Bienvenue {{ user.username }} sur le site</h2>
+            {% endif %}
+            <h3>On va te faire voler !!!</h3>
+        </div>
         {% include 'page/header.html' %}
         {% block content %}
         
         {% endblock %}
-    </div>
+        {% include 'page/footer.html' %}
     </body>
 </html>

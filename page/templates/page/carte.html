@@ -1,18 +1,23 @@
 {% extends 'page/base_html.html' %}
-{% load static %}
 
 {% block content %}
-        {% for carte in cartes %}
-            <div class="carte">
-                <div class="carte-title">
-                    <h1>{{ carte.title }}</h1>
-                </div>
-                <div class="carte-content">
-                    <p> {{ carte.content }}</p>
-                </div>
-                <div class="carte-image">
-                    <img src="{{ carte.image.url }}" alt="{{ carte.title }}" style="max-width: 800px;">
-                </div>
+{% for carte in cartes %}
+<div class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+            <div class="card-title">
+                <h1>{{ carte.title }}</h1>
             </div>
+        <div class="card-text">
+                <p> {{ carte.content }}
+                        <h5><a href="#">...</a></h5>
+                </p>
+        </div>
+        <div class="carte-image">
+                <img class="car-img-top" src="{{ carte.image.url }}" alt="{{ carte.title }}" style="max-width: 800px;">
+        </div>
+    </div>
+    </div>
+</div>
         {% endfor %}
 {% endblock %}

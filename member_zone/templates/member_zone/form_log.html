@@ -1,10 +1,14 @@
-{% include 'page/header.html' %}
+
+
+{% extends "page/base_html.html" %}
 
 {% block content %}
+<div class="container mt-5">
 <h1>{{ User.username }} Log</h1>
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p}}
-    <button type="submit">Envoyer</button>
-</form>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button class="btn btn-primary" type="submit">Envoyer</button>
+    </form>
+</div>
 {% endblock %}

@@ -8,6 +8,11 @@ from .models import Logs
     observations = forms.CharField(label="observations", max_length=255, required=False) """
 
 class LogForm(forms.ModelForm):
+
     class Meta:
         model = Logs
         fields = ['appareil', 'depart', 'retour', 'observations']
+
+        def __init__(self, *args, **kwargs):
+            super(Logs, self).__init__(*args, **kwargs)
+            self.fields['appareil'].widget.attrs.update({'class': 'form-control', 'placeholder': 'appareil'})

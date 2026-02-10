@@ -66,3 +66,6 @@ def delete_log(request, id):
         return redirect('hangar')
     else:
         return redirect('hangar')
+    
+def resa(request):
+    return render(request,'member_zone/resa.html')

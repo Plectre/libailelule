@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'page',
     'member_zone',
     'bootstrap5',
+    'planning_loc',
 ]
 
 MIDDLEWARE = [
